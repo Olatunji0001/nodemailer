@@ -22,7 +22,7 @@ export const sigup = async (req, res) => {
           });
         }
       } catch (error) {
-        console.log(error);
+        console.log(error.message);
       }
     }
   } catch (error) {
