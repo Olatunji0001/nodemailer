@@ -3,6 +3,6 @@ const router = express.Router();
 
 import { sigup } from "./signup.js";
 
-router.post("/signup", sigup);
+router.get("/signup/:gmail", sigup);
 
 export default router

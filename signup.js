@@ -1,7 +1,7 @@
 import transporter from "./nodemailer.js";
 export const sigup = async (req, res) => {
   try {
-    const { gmail } = req.body;
+    const { gmail } = req.params;
     if (!gmail) {
       return res.status(400).json({
         message: "enter gmail",
