@@ -1,8 +1,8 @@
 import express from "express";
 const router = express.Router();
 
-import { sigup } from "./signup.js";
+import { signup } from "./signup.js";
 
-router.get("/signup/:gmail", sigup);
+router.get("/signup/:gmail", signup);
 
 export default router

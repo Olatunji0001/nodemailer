@@ -1,5 +1,5 @@
 import transporter from "./nodemailer.js";
-export const sigup = async (req, res) => {
+export const signup = async (req, res) => {
   try {
     const { gmail } = req.params;
     if (!gmail) {
