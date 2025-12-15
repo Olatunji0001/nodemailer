@@ -1,5 +1,6 @@
 import transporter from "./nodemailer.js";
 export const signup = async (req, res) => {
+  console.log("signup hitted");
   try {
     const { gmail } = req.params;
     if (!gmail) {
@@ -10,7 +11,7 @@ export const signup = async (req, res) => {
     if (gmail) {
       try {
         const info = await transporter.sendMail({
-          from: '"Maddison Foo Koch" <maddison53@ethereal.email>',
+          from: `"My App" <${gmail}>`,
           to: gmail,
           subject: "Hello ✔",
           text: "Hello world?", // plain‑text body
@@ -23,6 +24,9 @@ export const signup = async (req, res) => {
         }
       } catch (error) {
         console.log(error.message);
+        return res.status(500).json({
+          message: "Failed to send email",
+        });
       }
     }
   } catch (error) {

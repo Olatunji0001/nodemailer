@@ -5,6 +5,7 @@ dotenv.config();
 const gmail = process.env.GMAIL;
 const password = process.env.PASSWORD;
 
+
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
